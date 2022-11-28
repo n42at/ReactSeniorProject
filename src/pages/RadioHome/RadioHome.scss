@@ -1,0 +1,32 @@
+
+
+
+.b1 {
+
+    width: 500px;
+    height: 500px;
+    border-radius: 100px;
+    border: 1px solid rgb(240, 239, 239);
+    margin: 200px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    transition: all .5s ease;
+    cursor: pointer;
+
+    h3 {
+      position: absolute;
+      font-size: 200px;
+    }
+
+
+    &:hover {
+      background-color: darkblue;
+      img {
+        opacity: 0.2;
+        z-index: 0;
+      }
+    }
+  }

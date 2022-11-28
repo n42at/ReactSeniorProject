@@ -1,0 +1,60 @@
+.adding{
+  padding: 10px;
+}
+.patient-profile{
+  padding-bottom: 50px;
+  background-color: white;
+}
+
+.patientprof {
+  
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  height: 89vh;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.patientimg{
+
+  align-items: center;
+  height: 20%;
+  width: 90%;
+  justify-Content: 'center';
+  padding: 0px 50px;
+  border-radius: 100%;
+
+  
+
+}
+form{
+
+    background-color: white;
+    padding: 12px 50px;
+    border-radius: 10px;
+    
+}
+
+h1{
+    color: rgb(77, 1, 77);
+    text-align: center;
+    font-size: 27px;
+    
+}
+
+button{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
