@@ -4,6 +4,7 @@ import { init } from "ityped";
 import React, { useEffect, useRef } from "react";
 import doctor from '../../assets/Doctor.png'
 import videoBg from '../../assets/video.mp4'
+import Testimonials from "../testimonials/testimonials";
 //import MainPortfolio from "../../pages/AppInterface/portfolio/portfolio";
 
 export default function Intro() {
@@ -55,13 +56,17 @@ export default function Intro() {
           
           <button onClick={routeChange} className="startbutton"> Start</button>
           
-         
+          
           
           
         </div>
         
       </div>
+      {/* <div className="testimonials">
+    <Testimonials/>  
+    </div>   */}
     </div>
-  
+    
+    
   );
 }
