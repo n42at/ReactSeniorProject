@@ -150,7 +150,7 @@ const Create = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button> Sign up</button>
+        <button onClick={routeChange} > Sign up</button>
       </form>
     </div>
   );

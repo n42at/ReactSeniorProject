@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./signup.scss";
-import FormInput from "./forminput";
-import Axios from "axios";
+import "./signin.scss";
+import FormInput from "./forminput2";
+import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 
 
-const Signup = () => {
+const SignIn = () => {
   const[name, setName] = useState("");
   const[email, setEmail] = useState("");
   const[mobile_number, setMobile] = useState("");
@@ -82,6 +82,33 @@ const Signup = () => {
     },
   ];
 
+  const post = {
+    name,
+    email,
+    mobile_number,
+    national_id,
+    password,
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+  };
+
+  const handleaddreadiologist = (e) => {
+    e.preventDefault();
+    console.log(post);
+    axios.post('http://localhost:8000/profiles/', post)
+    
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  
+
+    
+
 
   /*Axios.post("http://localhost:8000/profiles/", {
     name: name,
@@ -91,45 +118,18 @@ const Signup = () => {
     password: password,
   }).then(() => {
     console.log("success");
-  }); */
-  const blog = { name, email, mobile_number,national_id,password};
-  const handleaddradiologist = (e) => {
+  });
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(blog);
-    axios.post('http://localhost:8000/profiles/', blog)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  
-  }
-
-  // const handleSubmit = (e) => {
-      
-
-  //     e.preventDefault();
-  //     fetch('http://localhost:8000/profiles/', {
-  //        method: 'POST',
-  //        body: JSON.stringify(blog),
-  //        headers: {
-  //           'Content-type': 'application/json; charset=UTF-8',
-  //        },
-  //     })
-  //        .then((res) => res.json())
-  //        .then((post) => {
-  //           setName('');
-  //           setEmail('');
-  //           setMobile('');
-  //           setID('');
-  //           setPassword('');
-  //        })
-  //        .catch((err) => {
-  //           console.log(err.message);
-  //        });
-  //   };
-   
+    const post = {
+      name,
+      email,
+      mobile_number,
+      national_id,
+      password,
+    };
 
    /* fetch("http://localhost:8000/profiles/", {
       mode: "no-cors",
@@ -151,12 +151,31 @@ const Signup = () => {
         console.log("new user added");
 
       }).catch(() => console.log("error")); */
+  
+  // fetch("127.0.0.1:8000/profiles/", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json"},
+  //     body: JSON.stringify(post),
+  //   }).then(() => {
+  //     console.log("new radiologist signed in");
+  //   });
+  };
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
 
+
+
+
+
+
+  
 
   return (
-    <div className="signup" id= "signup">
-      <form onSubmit={handleaddradiologist}>
-        <h1>Sign up</h1>
+    <div className="signin" id= "signin">
+      <form onSubmit={handleSubmit}>
+        <h1>Sign in</h1>
         {inputs.map((input) => (
           <FormInput
             key={input.id}
@@ -165,13 +184,11 @@ const Signup = () => {
             onChange={onChange}
           />
         ))}
-
-
         
-        <button classname= "SignUpbutton"onClick={routeChange}>Sign Up</button>
+        <button onClick={handleaddreadiologist}>Sign in</button>
       </form>
     </div>
   );
 };
 
-export default Signup;
+export default SignIn;

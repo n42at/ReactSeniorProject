@@ -1,4 +1,8 @@
 import Topbar from "./components/topbar/Topbar"
+import 'jquery/dist/jquery.min.js'; // Have to install and import jQuery because of bootstrap modal's dependency
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 //import LeftBar from "./pages/AppInterface/portfolio/profile/sidebar/leftbar"
 import Scan from "./pages/scanning/Scan"
 import Intro from "./components/intro/intro"
@@ -15,7 +19,11 @@ import Menu from "./components/menu/menu";
 import PatientProf from "./pages/addpatient/patient-profile";
 import RadioHome from "./pages/RadioHome/RadioHome"
 import EditToolbar from "./pages/list/testing"
-
+import PatientsTable2 from "./pages/Table/PatientsTable"
+import AfterPatientProfile from "./pages/patient-profile/patient-profileafter";
+//import { Table } from "react-bootstrap"
+import Table from "./pages/AppInterface/portfolio/Tables"
+import SignIn from "./pages/Sign in/signin"
 function App() {
   const [menuOpen,setMenuOpen] = useState(false)
   return (
@@ -36,7 +44,10 @@ function App() {
           <Route path="/Register" element={<Create/>} />
           <Route path="/Register/main/Scan" element={<Scan/>} />
           <Route path="/Register/main/PatientProf" element={<PatientProf/>} />
-
+          
+          <Route path="/Register/main/PatientProfile" element={<AfterPatientProfile/>} />
+          <Route path="Table" element={<Table/>} />
+          <Route path="/Signin" element={<SignIn/>} />
 
           
         </Routes>

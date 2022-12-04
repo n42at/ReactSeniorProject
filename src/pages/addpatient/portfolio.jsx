@@ -74,17 +74,19 @@ export default function Portfolio() {
     <div className="portfolio1" >
       <div className="section2">
         
-        </div>
+       
 
       <div className="mainapp2">
-      <button className ="b1"> <img src={patient}/> update patient info </button>
-      <button className ="b2"> <img src={chest}/> Upload a scan to the patient </button>
-      <button className ="b4"> <img src={scans}/> Recent Scans</button>
-
+        <div className="mainapp3">
+      <button className ="b1p"> <img src={patient}/> update patient info </button>
+      <button className ="b2p"> <img src={chest}/> Upload a scan to the patient </button>
+      <button className ="b4p"> <img src={scans}/> Recent Scans</button>
 
       </div>
-
+      </div>
+      </div>
     </div>
+    
     
     
   );

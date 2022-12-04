@@ -1,19 +1,19 @@
 .app{
     height: 100%;
 }
-.sections
+.sections2
 {
     height: calc(100vh - 70px);
     width: 100%;
     background-color: rgb(187, 187, 187);
     position: relative;
     top: 70px;
-    /*scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
     scrollbar-width: none;
     &::-webkit-scrollbar{
         display: none;
     }
-    */
+    
     
     >* {
         width: 100vw;

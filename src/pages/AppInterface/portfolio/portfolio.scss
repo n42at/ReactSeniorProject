@@ -1,9 +1,21 @@
 @import "../../../global.scss";
 .portfolio{
-  background-image: radial-gradient(#ffffff, #cfcece);
+  background-image: radial-gradient(#ffffff, #ffffff);
 
 }
 
+.TableG{
+
+  width: 100%;
+
+}
+.patnum{
+  position:relative;
+   top:0px; 
+   left:0px;
+    margin-left:0px;
+     margin-right:0px;
+}
 .table{
   animation: 1s ease-out 0s 1 slideInFromUp;
     background-color: rgb(255, 255, 255);
@@ -17,14 +29,15 @@
     margin: 60px 10px;
 }
 .sectioni{
-  background-color: rgb(255, 255, 255);
-  margin: 100px 10px;
-  height: 50vh;
+  background-color: rgb(236, 236, 236);
+  margin: 80px 10px;
+  
+  height: 100vh;
   width: 20%;
   z-index: 3;
   left: 0px;
   position: fixed;
-  border-radius: 50px;
+  border-radius: 0px;
   transition-duration: 4s;
   transition-delay: 2s;
   transition-property: opacity, left;
@@ -39,10 +52,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 25%;
-    width: 30%;
-    border-radius: 100px;
-    margin: 30px 115px;
+    height: 20%;
+    width: 47%;
+    border-radius: 200px;
+    margin: 30px 95px;
     box-shadow: 0px 0px 10px 2px rgba(112, 7, 7, 0.8);
 
   }
@@ -67,12 +80,12 @@
     background-color: rgb(255, 255, 255);
     
     height: 60vh;
-    width: 50%;
+    width: 55%;
     z-index: 3;
     transition-duration: 4s;
     border-radius: 0px;
     box-shadow: 0px 0px 60px 2px rgba(102, 102, 102, 0.8);
-    margin: 10px 10px;
+    margin: 10px;
 
     
   }
@@ -85,11 +98,36 @@
     color: rgb(0, 0, 0);
   }
 
+  .patnum{
+    position:relative;
+    top:-75px;
+    //right:50px;
+    //margin-left:0px;
+    margin-right:-120px;
+  }
+  .patnum2{
+    position:relative;
+    top:-75px;
+    //right:50px;
+    //margin-left:0px;
+    margin-right:-120px;
+  }
+  .scans2{
+    position:relative;
+    top:10px;
+    right:100px;
+    margin-left:0px;
+    margin-right:0px;
+    color: rgb(19, 0, 57);
+  }
   .scans{
 
-    height: 5%;
-  text-align: center;
-  color: rgb(17, 17, 17);
+    position:relative;
+    top:10px;
+    right:100px;
+    margin-left:0px;
+    margin-right:0px;
+    color: rgb(21, 0, 63);
 
   }
 
@@ -99,12 +137,12 @@
     color: rgb(0, 0, 0);
 
   }
-  .button2 {
-    width: 220px;
-    height: 150px;
+.button2port{
+    width: 170px;
+    height: 110px;
     border-radius: 20px;
     border: 1px solid rgb(240, 239, 239);
-    margin: 40px 570px;
+    margin: 110px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,12 +206,12 @@
     }
   }
 }
-.button1 {
-    width: 220px;
-    height: 150px;
+.button1port {
+  width: 170px;
+  height: 110px;
     border-radius: 20px;
     border: 1px solid rgb(240, 239, 239);
-    margin: 500px 20px;
+    margin: 0px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -191,49 +229,8 @@
 
     h3 {
       position: absolute;
-      font-size: 20px;
-    }
+      font-size: 15px;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
-    }
-
-    &:hover {
-      background-color: $mainColor;
-      img {
-        opacity: 0.2;
-        z-index: 0;
-      }
-    }
-  }
-
-  .button3 {
-    width: 220px;
-    height: 150px;
-    border-radius: 20px;
-    border: 1px solid rgb(240, 239, 239);
-    margin: 500px 850px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    position: fixed;
-    transition: all .5s ease;
-    cursor: pointer;
-    
-
-
-    @include mobile{
-      width: 130px;
-      height: 100px;
-    }
-
-    h3 {
-      position: absolute;
-      font-size: 20px;
     }
 
     img {
@@ -253,12 +250,12 @@
   }
 
   
-  .b2 {
-    width: 220px;
-    height: 150px;
+  .button3port {
+    width: 170px;
+  height: 110px;
     border-radius: 20px;
     border: 1px solid rgb(240, 239, 239);
-    margin: 10px 300px;
+    margin: 330px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,18 +313,18 @@
     display: flex;
 
     @include mobile{
-      margin: 10px 0;
+      margin: 10px 0px;
       flex-wrap: wrap;
       justify-content: center;
     }
   }
 }
-.button4 {
-    width: 220px;
-    height: 150px;
+.button4port {
+  width: 170px;
+  height: 110px;
     border-radius: 20px;
     border: 1px solid rgb(240, 239, 239);
-    margin: 500px 300px;
+    margin: 220px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -363,83 +360,3 @@
       }
     }
   }
-  
-.portfolio {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    font-size: 50px;
-
-    @include mobile{
-      font-size: 20px;
-    }
-  }
-
-  ul {
-    margin: 10px;
-    padding: 0;
-    list-style: none;
-    display: flex;
-
-    @include mobile{
-      margin: 10px 0;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
-
-  .container {
-    width: 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    @include mobile{
-      width: 100%;
-    }
-
-    .item {
-      width: 220px;
-      height: 150px;
-      border-radius: 20px;
-      border: 1px solid rgb(240, 239, 239);
-      margin: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      position: relative;
-      transition: all .5s ease;
-      cursor: pointer;
-
-      @include mobile{
-        width: 130px;
-        height: 100px;
-      }
-
-      h3 {
-        position: absolute;
-        font-size: 20px;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-      }
-
-      &:hover {
-        background-color: $mainColor;
-        img {
-          opacity: 0.2;
-          z-index: 0;
-        }
-      }
-    }
-  }
-}

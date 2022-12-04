@@ -9,6 +9,7 @@ import scans from "../../../assets/scans.png";
 import radiologist from "../../../assets/radiologist.png";
 import { DataGrid } from '@material-ui/data-grid'
 import Popup from "./popup";
+import Table from "./Tables";
 
 import {
   featuredPortfolio,
@@ -88,26 +89,47 @@ export default function MainPortfolio() {
     console.log(tableData);
 
   return (
-    
+   
+
     
     <div className="portfolio" id="portfolio">
+     
+     
       
+     
       <div className="sectioni">
-        
-        <h1 className="sectiontitle"></h1>
-        <img src={radiologist} alt="radiologist" className="radiologist"/>
-        <h1 style={{ fontSize: "0.8rem" }} className="name"> Name of the specialist: </h1>
-        <h1 style={{ fontSize: "0.8rem" }}  className="scans"> number of scans done: </h1>
-        <h1 style={{ fontSize: "0.8rem" }} className="patnum"> number of patients active: </h1>
-        
-        </div>
       
-      <h1>Welcome</h1>
+      
+        <h1 className="sectiontitle"></h1>
+        
+        <img src={radiologist} alt="radiologist" className="radiologist"/>
+        <div className="textbox">
+        {/* <button type="button" class="btn btn-outline-primary">Primary</button> */}
+        <h1 style={{ fontSize: "1.8rem" }}  className="scans">Scans</h1>
+        <h1 style={{ fontSize: "1.8rem" }} className="scans2">340</h1>
+        
+
+        <h1 style={{ fontSize: "1.8rem" }} className="patnum">Patients</h1>
+        <h1 style={{ fontSize: "1.8rem" }} className="patnum2">101</h1>
+        </div>
+      <button onClick={routeChange2} className ="button1port"> <img src={patient}/> Add patients </button>
+      <button onClick={() => setOpenModal(true)} className ="button2port"> <img src={chest}/> Upload a scan </button>
+       
+      {/*<button onClick={routeChange} className ="button3port"> <img src={rep}/> list of patients </button> */}
+      
+      <button onClick={routeChange} className ="button4port"> <img src={scans}/> Recent Scans</button>
+        </div>
+        
+        <Popup 
+      open={openModal} 
+      onClose={() => setOpenModal(false)} /> 
+        
+        <Table />
 
 
-      <div className="mainapp">
-
-      <div class= "table1" style={{ height: 500, width: '100%' }}>
+      {/* <div className="mainapp"> */}
+      
+      {/* { <div class= "table1" style={{ height: 500, width: '100%' }}>
               <DataGrid
                 rows={tableData}
                 columns={columns}
@@ -120,20 +142,20 @@ export default function MainPortfolio() {
                   console.log(deletedRows);
                 }}
               />
-            </div>
+            </div> } */}
 
+
+
+          
+            
+            
+          
         
-      <button onClick={routeChange2} className ="button1"> <img src={patient}/> Add patients </button>
-      <button onClick={() => setOpenModal(true)} className ="button2"> <img src={chest}/> Upload a scan </button>
-      <Popup 
-      open={openModal} 
-      onClose={() => setOpenModal(false)} />
-      <button onClick={routeChange} className ="button3"> <img src={rep}/> list of patients </button>
-      <button onClick={routeChange} className ="button4"> <img src={scans}/> Recent Scans</button>
+      
 
 
-      </div>
-
+      {/* </div> */}
+      
     </div>
     
     
