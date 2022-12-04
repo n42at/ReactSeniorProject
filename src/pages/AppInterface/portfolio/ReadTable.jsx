@@ -22,8 +22,25 @@ const ReadTable = ({ patient, handleEditPostForm, patients }) => {
             >
               Edit
             </button>
+
+            <button
+              type="button"
+              className=" btn btn-primary ml-auto d-block mb-2"
+              data-bs-toggle="modal"
+              data-bs-target="#showModalForm"
+              onClick={(e) => handleEditPostForm(e, patient)}
+            >
+              Show patients info
+            </button>
+
+
+            
+
+
           </td>
         </tr>
+
+        
 
       ))}
 
