@@ -2,15 +2,38 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ReadTable from './ReadTable';
 import './Tables.scss';
+import { useNavigate } from 'react-router';
 
 const Table = () => {
   const [patients, setpatients] = useState([]);
   const [addpatient, setaddpatinet] = useState({name: '', mobile_number: '',national_id: '',radiologist_id: ''});
+  const [editpatient, seteditpatient] = useState(null)
+  const [editFormData, setEditFormData] = useState({
+    name: '',
+    mobile_number: '',
+    national_id: '',
+    radiologist_id: '',
+  });
+
+  let navigate = useNavigate(); 
+
+  const routeChange = () => {
+    let path = `./PatientProfile`;
+    navigate(path);
+  };
 
   const handleChange = (input) => (e) => {
     e.preventDefault()
     console.log(addpatient);
     setaddpatinet({ ...addpatient, [input]: e.target.value });
+  }
+
+
+
+  const handleEditChange = (input) => (e) => {
+    e.preventDefault()
+    console.log(editFormData);
+    setEditFormData({ ...editFormData, [input]: e.target.value });
   }
 
   const handleaddpatient = (e) => {
@@ -161,7 +184,7 @@ const Table = () => {
                     name="name"
                     placeholder="Name"
                     required
-                    onChange={handleChange("name")}
+                    onChange={handleEditChange("name")}
 
                   />
                 </div>
@@ -173,7 +196,7 @@ const Table = () => {
                     name="mobile_number"
                     placeholder="Mobile number"
                     required
-                    onChange={handleChange("mobile_number")}
+                    onChange={handleEditChange("mobile_number")}
                   />
                 </div>
                 <div className="mb-3">
@@ -184,11 +207,9 @@ const Table = () => {
                     name="mobile_number"
                     placeholder="radiologist"
                     required
-                    onChange={handleChange("radiologist")}
+                    onChange={handleEditChange("radiologist")}
                   />
                 </div>
-
-                
                 <div className="mb-3">
                   <label className="form-label">National ID</label>
                   <textarea
@@ -197,7 +218,7 @@ const Table = () => {
                     name="national_id"
                     placeholder="National ID"
                     required
-                    onChange={handleChange("national_id")}
+                    onChange={handleEditChange("national_id")}
                   ></textarea>
                 </div>
                 <div className="modal-footer d-block">
@@ -209,7 +230,84 @@ const Table = () => {
           </div>
         </div>
       </div>
+
+
+      {/*show patients info*/}
+      <div className="modal fade" id="showModalForm" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       
+       <div className="modal-dialog">
+         <div className="modal-content">
+           <div className="modal-header">
+             <h5 className="modal-title" id="exampleModalLabel">Add New Patient</h5>
+             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div className="modal-body">
+             <form onSubmit={handleaddpatient}>
+               <div className="mb-3">
+                 <label className="form-label">Name</label>
+                 <input
+                   type="text"
+                   className="form-control"
+                   name="name"
+                   placeholder="Name"
+                   required
+                   onChange={handleChange("name")}
+                 />
+               </div>
+               <div className="mb-3">
+                 <label className="form-label">mobile number</label>
+                 <input
+                   type="text"
+                   className="form-control"
+                   name="mobile_number"
+                   placeholder="Mobile number"
+                   required
+                   onChange={handleChange("mobile_number")}
+                 />
+               </div>
+               
+               <div className="mb-3">
+                 <label className="form-label">National ID</label>
+                 <input
+                   type="text"
+                   className="form-control"
+                   name="national_id"
+                   placeholder="National ID"
+                   required
+                   onChange={handleChange("national_id")}
+                 input/>
+               </div>
+               <div className="mb-3">
+                 <label className="form-label">radiologist</label>
+                 <input
+                   type="text"
+                   className="form-control"
+                   name="mobile_number"
+                   placeholder="radiologist"
+                   required
+                   onChange={handleChange("radiologist")}
+                 />
+               </div>
+               
+               <div className="modal-footer d-block">
+                 <button onClick= {routeChange} type="submit" data-bs-dismiss="modal" className="btn btn-warning float-end">Patient Profile</button>
+               </div>
+             </form>
+             
+           </div>
+           
+         </div>
+         
+       </div>
+     </div>
+
+
+
+
     </div>
+
+
+
   )
 }
 

@@ -124,7 +124,9 @@ export default function MainPortfolio() {
       open={openModal} 
       onClose={() => setOpenModal(false)} /> 
         
-        <Table />
+        
+        <Table/>
+      
 
 
       {/* <div className="mainapp"> */}
