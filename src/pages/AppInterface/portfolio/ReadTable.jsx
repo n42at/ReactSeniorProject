@@ -29,8 +29,10 @@ const ReadTable = ({ patient, handleEditPostForm, patients }) => {
               data-bs-toggle="modal"
               data-bs-target="#showModalForm"
               onClick={(e) => handleEditPostForm(e, patient)}
+              
             >
               Show patients info
+
             </button>
 
 
